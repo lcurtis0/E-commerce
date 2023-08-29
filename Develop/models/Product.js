@@ -22,11 +22,13 @@ Product.init(
     },
     price:{
       type: DataTypes.DECIMAL,
-      // need to add validator for for second decimal place
+      allowNull: false,
+      isDecimal: true,
     },
     stock:{
       type: DataTypes.INTEGER,
-      max: 99,
+      allowNull: false,
+      is: 10,
       isNumeric: true,
     },
     catagory_id:{

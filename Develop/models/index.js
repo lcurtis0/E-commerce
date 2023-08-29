@@ -7,7 +7,7 @@ const ProductTag = require('./ProductTag');
 // Products belongsTo Category
 
 Product.hasOne(Category, {
-  foreignKey: 'product_id',
+  foreignKey: 'product_id', //Note: May want to delete forgien key and CASCADE for Driver.hasOne(License) instead
   onDelete: 'CASCADE'
 });
 
