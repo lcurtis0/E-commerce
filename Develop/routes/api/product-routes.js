@@ -22,7 +22,7 @@ router.get('/:id', async (req, res) => {
   // find a single product by its `id` -- ✅
 
   try{
-    const productData = await Category.findByPk(req.params.id, {
+    const productData = await Product.findByPk(req.params.id, {
       include: [{ association: Category},{ association: Tag },{ association: ProductTag }],
     });
     if (!productData) {
@@ -41,8 +41,8 @@ router.get('/:id', async (req, res) => {
 // create new product
 router.post('/', async(req, res) => {
   try{
-    const catagoryData = await Category.create(req.body); 
-    res.status(200).json(catagoryData);
+    const productData = await Product.create(req.body); 
+    res.status(200).json(productData);
   } catch (err) {
     res.status(400).json(err);
     
@@ -102,7 +102,9 @@ router.put('/:id', (req, res) => {
           where: { product_id: req.params.id }
         }).then((productTags) => {
           // create filtered list of new tag_ids
-          const productTagIds = productTags.map(({ tag_id }) => tag_id);
+          Product.bulkCreate
+
+          const productTagIds = productTags.map(({ tag_id }) => tag_id); // This creates array for req.body line 51
           const newProductTags = req.body.tagIds
           .filter((tag_id) => !productTagIds.includes(tag_id))
           .map((tag_id) => {
@@ -132,8 +134,23 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
-  // delete one product by its `id` value
+router.delete('/:id', async(req, res) => {
+  // delete one product by its `id` value -- ✅
+  try{
+    const productData = await Product.destroy({
+      where: {
+        id: req.params.id,
+      },
+    })
+    if (!productData[0]) {
+      res.status(404).json({ message: 'There is no product with the same id to delete' });
+      return;
+    }
+      res.status(200).json(productData);
+    } catch (err) {
+      res.status(500).json(err);
+  
+    }
 });
 
 module.exports = router;
