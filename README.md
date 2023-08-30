@@ -23,3 +23,6 @@ THEN I am able to successfully create, update, and delete data in my database
 
 Give credit to Linix hint for helping with mysql connection issues 
 https://linuxhint.com/error-2003-cant-connect-mysql-server-localhost/
+
+Credit to sebhastian for mysql error 2
+https://sebhastian.com/mysql-failed-to-open-file-error-2/
