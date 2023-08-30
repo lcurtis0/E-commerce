@@ -6,8 +6,9 @@ const ProductTag = require('./ProductTag');
 
 // Products belongsTo Category
 
+
 Product.hasOne(Category, {
-  foreignKey: 'product_id', //Note: May want to delete forgien key and CASCADE for Product.hasOne(Category) instead
+  foreignKey: 'category_id', //Note: May want to delete forgien key and CASCADE for Product.hasOne(Category) instead
   onDelete: 'CASCADE'
 });
 
