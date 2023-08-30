@@ -7,23 +7,19 @@ const ProductTag = require('./ProductTag');
 // Products belongsTo Category
 
 Product.hasOne(Category, {
-  foreignKey: 'product_id', //Note: May want to delete forgien key and CASCADE for Driver.hasOne(License) instead
+  foreignKey: 'product_id', //Note: May want to delete forgien key and CASCADE for Product.hasOne(Category) instead
   onDelete: 'CASCADE'
-});
-
-Category.belongsTo(Product, {
-  foreignKey: 'product_id'
 });
 
 // Categories have many Products
 
 Category.hasMany(Product, {
-  foreignKey: 'product_id',
+  foreignKey: 'category_id',
   onDelete: 'CASCADE',
 })
 
-Product.belongsTo(Product, {
-  foreignKey: 'product_id'
+Product.belongsTo(Category, {
+  foreignKey: 'category_id'
 })
 
 // Products belongToMany Tags (through ProductTag)
