@@ -26,3 +26,6 @@ https://linuxhint.com/error-2003-cant-connect-mysql-server-localhost/
 
 Credit to sebhastian for mysql error 2
 https://sebhastian.com/mysql-failed-to-open-file-error-2/
+
+Crdit to LinkedInLearning for explaining Many to Many relationships
+https://www.youtube.com/watch?v=4q-keGvUnag&ab_channel=LinkedInLearning

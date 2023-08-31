@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Category, Product } = require('../../models');
+const { Category, Product, ProductTag } = require('../../models');
 
 // The `/api/categories` endpoint
 
@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   // find all categories -- ✅
   try {
     const catagoryData = await Category.findAll({
-      include: [{ association: Product }],
+      include: [{ model: Product, model: Category, model:ProductTag }],
     });
     res.status(200).json(catagoryData);
   } catch (err) {
@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
   // find one category by its `id` value -- ✅
   try {
     const catagoryData = await Category.findByPk(req.params.id, {
-      include: [{ association: Product }],
+      include: [{ model: Product, through: ProductTag, as: 'category_code'}],
     }); //The findByPk method obtains only a single entry from a table, using the provided primary key.
 
     if (!catagoryData) {
