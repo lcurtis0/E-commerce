@@ -26,31 +26,20 @@ Product.belongsTo(Category, {
 // Products belongToMany Tags (through ProductTag)
 
 Product.belongsToMany(Tag, {
-  
-  through: 'tagged_aisle' });
 
-  /*
-  through: {
-  model: ProductTag,
-  unique: false,
-},
- as: 'tagged_aisle'});
-*/
+  through: ProductTag,
+  foreignKey: 'product_id',
+});
+
 
 // Tags belongToMany Products (through ProductTag)
 
 Tag.belongsToMany(Product, { 
 
-  through: 'category_code'});
+  
+    through: ProductTag,
+    foreignKey: 'product_id'});
 
-  /*
-  through: {
-    model: ProductTag,
-    unique: false,
-  },
-  as: 'category_code'}
-);
-*/
 
 module.exports = {
   Product,
