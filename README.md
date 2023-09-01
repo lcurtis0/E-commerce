@@ -26,7 +26,7 @@ Users must first source schema, seeds/index, and server.js files and open Insomn
 
 Here is the video
 
-
+https://drive.google.com/file/d/1Rss7YgcZSC9sfl4h0OwvBENeZdIsGHTZ/view
 
 # Credits
 
