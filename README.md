@@ -1,27 +1,37 @@
-# E-commerce
+# E-commerce(challenge-13)
+
+# Description
+
+This files are created to complete the Module 13 challenge-13
+
+I want to have an app to track the products, categories and their tags as they are being stocked
+
+This is so that users can save time by seeing lists and trackspecific products.
+
+I learned that ManytoMany is a very good sorting method for track ids in different tables.
+
+Table of Contents
+- [Description](#Decription)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Credits](#Credits)
+- [License](#License)
+- [Deployment](#Deployment)
+
+N/A
+
+# Usage
+
+Users must first source schema, seeds/index, and server.js files and open Insomnia
+
+Here is the video
 
 
-GIVEN a functional Express.js API
 
-WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
-THEN I am able to connect to a database using Sequelize
-
-WHEN I enter schema and seed commands
-THEN a development database is created and is seeded with test data
-
-WHEN I enter the command to invoke the application
-THEN my server is started and the Sequelize models are synced to the MySQL database
-
-WHEN I open API GET routes in Insomnia Core for categories, products, or tags
-THEN the data for each of these routes is displayed in a formatted JSON
-
-WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
-THEN I am able to successfully create, update, and delete data in my database
+# Credits
 
 
-
-
-Give credit to Linix hint for helping with mysql connection issues 
+Credit to Linix hint for helping with mysql connection issues 
 https://linuxhint.com/error-2003-cant-connect-mysql-server-localhost/
 
 Credit to sebhastian for mysql error 2
@@ -29,3 +39,21 @@ https://sebhastian.com/mysql-failed-to-open-file-error-2/
 
 Crdit to LinkedInLearning for explaining Many to Many relationships
 https://www.youtube.com/watch?v=4q-keGvUnag&ab_channel=LinkedInLearning
+
+# License
+
+'![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)'
+
+# Deployment
+Evaluated environment url: 
+
+Badges
+N/A
+
+How to Contribute
+N/A
+
+Tests
+N/A
+
+
