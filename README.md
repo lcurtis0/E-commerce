@@ -45,7 +45,7 @@ https://www.youtube.com/watch?v=4q-keGvUnag&ab_channel=LinkedInLearning
 '![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)'
 
 # Deployment
-Evaluated environment url: 
+Evaluated environment url: https://lcurtis0.github.io/E-commerce/
 
 Badges
 N/A
